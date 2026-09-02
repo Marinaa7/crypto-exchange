@@ -92,6 +92,27 @@ Public keys checks signature
 
 ## 3. One order flow
 
+When a user places a buy or sell order, the exchange first
+validates the order and verifies that the user has sufficient
+funds.
+
+For orders that require funds, the required amount is reserved
+to prevent the same funds from being used by multiple active
+orders.
+
+The order is then processed by the trading system. If a compatible
+opposite order exists, the matching engine matches the orders and
+creates a trade.
+
+The trade transfers the corresponding assets between the buyer
+and seller.
+
+If the order cannot be completely matched, the remaining quantity
+stays active in the order book.
+
+An order can therefore be completely filled, partially filled,
+or cancelled before it is fully executed.
+
 - **USER**
 - **ORDER**
 - **TRADING SERVICE**
