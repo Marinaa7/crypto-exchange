@@ -125,3 +125,25 @@ or cancelled before it is fully executed.
 - **LEDGER UPDATED**
 - **BALANCES UPDATED**
 - **USER RECEIVES HIS RESULTS**
+
+## 4. Database
+
+The exchange uses a persistent relational database to store **users**,
+**orders**, **trades**, **balances**, **ledger entries**, **deposits**, and **withdrawals**.  
+
+**Users** are uniquely identified and related to their orders, balances,
+ledger entries, deposits, and withdrawals.  
+
+**Orders** and **trades** are stored separately because a single order can
+result in multiple trades when it is partially filled.  
+
+**Balances** represent the user's current available and reserved funds,
+while the ledger provides an immutable internal history of asset
+movements.  
+
+Database transactions are used when multiple related financial
+updates must be applied atomically, ensuring that partial updates
+cannot leave the system in an inconsistent state.  
+
+Indexes and database constraints are used to improve query
+performance and preserve data integrity.
