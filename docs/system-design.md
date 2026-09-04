@@ -147,3 +147,16 @@ cannot leave the system in an inconsistent state.
 
 Indexes and database constraints are used to improve query
 performance and preserve data integrity.
+
+## 5. Scalability & Reliability
+
+The exchange must be able to handle a growing number of users,
+orders, and transactions while maintaining correctness and
+availability.
+
+The system can scale horizontally by running multiple instances
+of backend services behind a load balancer.
+
+Critical trading operations require careful concurrency control
+to prevent multiple operations from modifying the same state
+incorrectly.
