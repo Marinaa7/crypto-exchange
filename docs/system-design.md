@@ -160,3 +160,16 @@ of backend services behind a load balancer.
 Critical trading operations require careful concurrency control
 to prevent multiple operations from modifying the same state
 incorrectly.
+
+A message queue can be used to buffer and process high volumes
+of requests where asynchronous processing is appropriate.
+
+Critical data is protected through database transactions,
+replication, backups, and recovery mechanisms.
+
+The system should also support idempotent operations for
+financial requests such as withdrawals to prevent duplicate
+processing.
+
+Monitoring, metrics, logging, and health checks are used to
+detect failures and maintain system reliability.
